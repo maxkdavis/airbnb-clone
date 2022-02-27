@@ -3,9 +3,10 @@ import React from "react";
 // import StarIcon from "../images/star.png";
 
 export default function Card(props) {
+    console.log(props);
     return (
         <div className="card">
-            <img src={`..images/${props.img}`} className="card--image" alt="profile" />
+            <img src={process.env.PUBLIC_URL + "/images/katie-zaferes.png"} className="card--image" alt="profile" />
             <div className="card--stats">
                 <span>{props.rating}</span>
                 <span className="gray">({props.reviewCount}) • </span>
