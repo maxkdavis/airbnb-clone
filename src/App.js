@@ -1,15 +1,20 @@
 import React from "react";
-// import Hero from "./components/Hero";
-// import ReactDOM from "react-dom";
 import NavBar from "./components/NavBar";
 import Card from "./components/Card";
+import Hero from "./components/Hero.js";
+import Data from "./Data.js";
+import { isContentEditable } from "@testing-library/user-event/dist/utils";
 
 export default function App() {
-    // <Hero />
+    const cards = Data.map((item) => {
+        return <Card key={item.id} img={item.coverImg} rating={item.stats.rating} reviewCount={item.stats.reviewCount} location={item.location} title={item.title} price={item.price} openSpots={isContentEditable.openSpots} />;
+    });
+
     return (
         <div>
             <NavBar />
-            <Card img="katie-zaferes.png" rating="5.0" reviewCount={6} country="USA" title="Life Lessons with Katie Zaferes" price={136} />
+            <Hero />
+            <section className="cards-list">{cards}</section>
         </div>
     );
 }

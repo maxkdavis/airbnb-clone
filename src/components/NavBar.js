@@ -1,6 +1,9 @@
 import React from "react";
-// import AirbnbLogo from "../images/airbnb-logo.png";
 
 export default function NavBar() {
-    return <nav className="nav">{/* <img src={AirbnbLogo} alt="airbnb logo" className="nav--logo" /> */}</nav>;
+    return (
+        <nav className="nav">
+            <img src={process.env.PUBLIC_URL + "/images/airbnb-logo.png"} alt="airbnb logo" className="nav--logo" />
+        </nav>
+    );
 }
